@@ -19,20 +19,16 @@
   button { font-size: 1rem; padding: .7rem 1.4rem; border-radius: 10px;
            border: 0; background: #6d4cff; color: #fff; cursor: pointer; }
   button:active { opacity: .8; }
-  .hint { margin-top: 2rem; font-size: .95rem; }
-  code { background: rgba(128,128,128,.18); padding: .15rem .4rem; border-radius: 5px; }
   .error { color: #d33; }
 </style>
 </head>
 <body>
 <img class="logo" src="logo.png" alt="">
-<h1 id="title">Код авторизації</h1>
-<p id="subtitle">Скопіюй його й надішли боту.</p>
+<h1 id="title">Готово</h1>
+<p id="subtitle">Скопіюй команду й надішли її боту.</p>
 
-<textarea id="code" rows="3" readonly></textarea>
-<button id="copy">Скопіювати</button>
-
-<p class="hint">Надішли боту: <code id="cmd">/connect tiktok code &lt;код&gt;</code></p>
+<textarea id="code" rows="4" readonly></textarea>
+<button id="copy">Скопіювати команду</button>
 
 <script>
   const params = new URLSearchParams(location.search);
@@ -40,9 +36,11 @@
   const error = params.get("error_description") || params.get("error");
   const box = document.getElementById("code");
 
+  // У полі одразу лежить готова команда — копіювати сам код нема сенсу.
+  const command = "/connect tiktok code " + code;
+
   if (code) {
-    box.value = code;
-    document.getElementById("cmd").textContent = "/connect tiktok code " + code;
+    box.value = command;
   } else {
     document.getElementById("title").textContent = error ? "TikTok відмовив" : "Коду немає";
     document.getElementById("title").className = "error";
@@ -53,8 +51,7 @@
   }
 
   document.getElementById("copy").onclick = async () => {
-    const text = document.getElementById("cmd").textContent;
-    try { await navigator.clipboard.writeText(text); }
+    try { await navigator.clipboard.writeText(command); }
     catch { box.select(); document.execCommand("copy"); }
     document.getElementById("copy").textContent = "Скопійовано ✓";
   };
