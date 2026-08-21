@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="../logo.png">
+<link rel="stylesheet" href="../style.css">
+<title>StreamClipper</title>
+<meta name="description" content="Everything StreamClipper does with a stream recording: moment selection, vertical framing, captions, verification and publishing.">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../"><img src="../logo.png" alt="">StreamClipper</a>
+    <nav class="main">
+      <a href="../">Overview</a>
+      <a href="../features/" aria-current="page">Features</a>
+      <a href="../how-it-works/">How it works</a>
+      <a href="../faq/">FAQ</a>
+      <a href="../terms-of-service/">Terms</a>
+      <a href="../privacy-policy/">Privacy</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1>Features</h1>
+  <p class="lead">Everything StreamClipper does between a raw recording and a
+  clip ready to publish.</p>
+
+  <h2>Finding the moments</h2>
+  <p>A three-hour recording is scanned for loudness peaks — the places where the
+  streamer reacts. Speech around each peak is transcribed locally, and the
+  transcript is used to decide which moments hold together without the rest of
+  the stream. A moment that only makes sense to someone who watched for an hour
+  is discarded.</p>
+  <p>Each candidate is scored for how understandable it is on its own. Anything
+  below the threshold never becomes a clip.</p>
+
+  <h2>Vertical framing</h2>
+  <p>Short-form video puts the streamer's webcam above the gameplay.
+  StreamClipper finds that webcam window by itself, because its position changes
+  between scenes and games:</p>
+  <ul>
+    <li>the face is detected inside the frame, and the still background around
+        it marks the edges of the camera window</li>
+    <li>a layout confirmed on one clip is reused on the others, so a clip where
+        the streamer turned away is not left without a camera</li>
+    <li>if the camera moved to another corner between scenes, that is detected
+        and the frame follows</li>
+    <li>the nickname bar under the camera is never cropped away</li>
+  </ul>
+  <p>The gameplay half follows the action instead of sitting in a fixed centre
+  crop, and holds still between movements so the picture does not drift.</p>
+
+  <h2>Captions</h2>
+  <p>Whisper returns the timing of every word, so captions are word-synced: a few
+  words on screen at a time, the one being spoken highlighted. A translated line
+  sits underneath for viewers who do not speak the streamer's language. Both
+  lines carry an outline and a shadow, because plain text disappears against a
+  bright wall or an explosion.</p>
+
+  <h2>Sound</h2>
+  <p>Clips are normalised to the loudness level short-form platforms expect. The
+  limiter is deliberately kept shallow: pushed harder, it squashes the streamer's
+  own microphone — the loudest source — and voices from the party chat end up
+  louder than the streamer.</p>
+
+  <h2>Text for publishing</h2>
+  <p>Every clip gets a title, a one-line hook, a description and hashtags, in the
+  streamer's own voice and in two languages. The text is written from what is
+  actually said inside that clip and from a frame of it, not from a summary.</p>
+
+  <h2>Verification</h2>
+  <p>Before a clip is delivered it is checked for silence, black frames, a
+  missing camera band, a wrong aspect ratio, a cut-off word and a weak opening.
+  A clip that fails is not sent — the reason is reported instead.</p>
+
+  <h2>Editing</h2>
+  <p>Clip boundaries can be adjusted in plain language: shift the start, trim the
+  end, or begin at a specific phrase. The instruction is interpreted, but the
+  arithmetic and the search through the transcript are done exactly, so the same
+  request always produces the same result. The title and description are kept
+  unless changing them was requested.</p>
+</main>
+
+<footer class="bottom">
+  <div class="wrap">
+    <nav>
+      <a href="../">Overview</a>
+      <a href="../features/">Features</a>
+      <a href="../how-it-works/">How it works</a>
+      <a href="../faq/">FAQ</a>
+      <a href="../terms-of-service/">Terms of Service</a>
+      <a href="../privacy-policy/">Privacy Policy</a>
+    </nav>
+    StreamClipper · <a href="mailto:l16061448@gmail.com">l16061448@gmail.com</a>
+  </div>
+</footer>
+
+</body>
+</html>

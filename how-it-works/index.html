@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="../logo.png">
+<link rel="stylesheet" href="../style.css">
+<title>StreamClipper</title>
+<meta name="description" content="The path a stream recording takes through StreamClipper, from the recorder to a published clip.">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../"><img src="../logo.png" alt="">StreamClipper</a>
+    <nav class="main">
+      <a href="../">Overview</a>
+      <a href="../features/">Features</a>
+      <a href="../how-it-works/" aria-current="page">How it works</a>
+      <a href="../faq/">FAQ</a>
+      <a href="../terms-of-service/">Terms</a>
+      <a href="../privacy-policy/">Privacy</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1>How it works</h1>
+  <p class="lead">The path a recording takes, from the moment the stream ends to
+  a published clip.</p>
+
+  <ol class="steps">
+    <li>
+      <h3>The recording arrives</h3>
+      <p>The streaming software writes the recording into a folder on the
+      operator's own machine. Nothing is uploaded anywhere at this point.</p>
+    </li>
+    <li>
+      <h3>The moments are found</h3>
+      <p>Audio is analysed for reactions, speech around them is transcribed
+      locally, and the moments worth clipping are selected. A three-hour
+      recording usually yields a handful.</p>
+    </li>
+    <li>
+      <h3>The clips are built</h3>
+      <p>Each moment is rendered as a vertical clip: webcam above, gameplay
+      below, captions at the seam, sound normalised.</p>
+    </li>
+    <li>
+      <h3>The clips are checked</h3>
+      <p>Automatic verification rejects anything broken — silence, black frames,
+      a missing camera, a sentence cut in half.</p>
+    </li>
+    <li>
+      <h3>The operator reviews them</h3>
+      <p>Clips arrive in a private Telegram chat with their suggested title,
+      description and tags. They can be re-cut or rewritten from there.</p>
+    </li>
+    <li>
+      <h3>Publishing happens on approval</h3>
+      <p>Each platform has its own button. Pressing it uploads that one clip.
+      Nothing is scheduled, batched or published automatically.</p>
+    </li>
+  </ol>
+
+  <h2>What leaves the machine</h2>
+  <table>
+    <tr><th>Data</th><th>Where it goes</th></tr>
+    <tr><td>The stream recording</td><td>Nowhere. It stays on the operator's disk.</td></tr>
+    <tr><td>Transcript excerpts</td><td>To Anthropic's Claude API, to choose moments and write captions.</td></tr>
+    <tr><td>Finished clips</td><td>To Telegram for review, and to a platform only when the operator presses its button.</td></tr>
+  </table>
+
+  <p class="note">Access to a platform can be revoked at any time, either from
+  that platform's own settings or with the tool's disconnect command.</p>
+</main>
+
+<footer class="bottom">
+  <div class="wrap">
+    <nav>
+      <a href="../">Overview</a>
+      <a href="../features/">Features</a>
+      <a href="../how-it-works/">How it works</a>
+      <a href="../faq/">FAQ</a>
+      <a href="../terms-of-service/">Terms of Service</a>
+      <a href="../privacy-policy/">Privacy Policy</a>
+    </nav>
+    StreamClipper · <a href="mailto:l16061448@gmail.com">l16061448@gmail.com</a>
+  </div>
+</footer>
+
+</body>
+</html>
