@@ -1,56 +1,103 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/png" href="logo.png">
+<link rel="stylesheet" href="style.css">
 <title>StreamClipper</title>
-<style>
-  :root { color-scheme: light dark; }
-  body { max-width: 42rem; margin: 3rem auto; padding: 0 1.25rem;
-         font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
-  h1 { font-size: 1.9rem; margin-bottom: .25rem; }
-  .logo { width: 96px; height: 96px; border-radius: 22px; display: block;
-          margin-bottom: 1.25rem; }
-  .lead { color: #666; margin-top: 0; }
-  h2 { margin-top: 2.5rem; font-size: 1.2rem; }
-  ul { padding-left: 1.2rem; }
-  li { margin: .4rem 0; }
-  nav a { margin-right: 1rem; }
-  footer { margin-top: 3rem; color: #888; font-size: .9rem; }
-</style>
+<meta name="description" content="StreamClipper turns long game stream recordings into short vertical clips and publishes the approved ones to YouTube Shorts, TikTok and Discord.">
 </head>
 <body>
-<img class="logo" src="logo.png" alt="StreamClipper">
-<h1>StreamClipper</h1>
-<p class="lead">A personal tool that cuts highlights from my own game streams
-and publishes them to my own accounts.</p>
 
-<h2>What it does</h2>
-<ul>
-  <li>Reads a stream recording stored on my own computer</li>
-  <li>Finds loud moments, transcribes the speech around them, and picks the
-      ones worth clipping</li>
-  <li>Renders short vertical clips and writes titles, descriptions and tags</li>
-  <li>Sends the clips to me in Telegram for review</li>
-  <li>Uploads a clip to my own YouTube or TikTok account when I press a button</li>
-</ul>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="logo.png" alt="">StreamClipper</a>
+    <nav class="main">
+      <a href="index.html" aria-current="page">Overview</a>
+      <a href="features.html">Features</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="faq.html">FAQ</a>
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </div>
+</header>
 
-<h2>Who it is for</h2>
-<p>Only for me, the channel owner. The tool is not offered to other users, has
-no sign-up, and processes no one else's content or accounts.</p>
+<main class="wrap">
+  <h1>StreamClipper</h1>
+  <p class="lead">StreamClipper turns a multi-hour game stream recording into
+  short vertical clips, writes a caption for each one, and publishes the clips
+  its owner approves to YouTube Shorts, TikTok and Discord.</p>
 
-<h2>How TikTok is used</h2>
-<p>The tool uses the TikTok Content Posting API for a single purpose: uploading
-a video file I created to my own TikTok account, with a caption I have seen and
-approved. Nothing is read from TikTok, nothing is posted automatically without
-my explicit action.</p>
+  <p>It runs entirely on the operator's own computer. A recording never leaves
+  that machine — only the finished clips the operator chooses to publish do.</p>
 
-<nav>
-  <a href="terms.html">Terms of Service</a>
-  <a href="privacy.html">Privacy Policy</a>
-</nav>
+  <h2>What it does</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Finds the moments</h3>
+      <p>Detects loudness peaks, transcribes the speech around them, and keeps
+      only the moments that make sense on their own.</p>
+    </div>
+    <div class="card">
+      <h3>Builds the vertical frame</h3>
+      <p>Locates the webcam window automatically, places it above the gameplay
+      and follows the action so the important part stays in frame.</p>
+    </div>
+    <div class="card">
+      <h3>Adds captions</h3>
+      <p>Word-synced subtitles in the streamer's language, with an English line
+      underneath for viewers outside the country.</p>
+    </div>
+    <div class="card">
+      <h3>Writes the text</h3>
+      <p>A title, a hook, a description and hashtags for every clip — in the
+      streamer's own voice, in two languages.</p>
+    </div>
+    <div class="card">
+      <h3>Checks the result</h3>
+      <p>Every clip is verified before delivery: silence, black frames, missing
+      camera or a cut-off word mean the clip is rejected, not sent.</p>
+    </div>
+    <div class="card">
+      <h3>Publishes on approval</h3>
+      <p>Clips arrive in Telegram for review. Nothing is published until the
+      owner presses the button for that specific clip.</p>
+    </div>
+  </div>
 
-<footer>Contact: <a href="mailto:l16061448@gmail.com">l16061448@gmail.com</a></footer>
+  <h2>Who it is for</h2>
+  <p>A single streamer — the owner of the connected accounts. StreamClipper has
+  no sign-up, no other users, and processes no one else's recordings. The
+  <a href="how-it-works.html">how it works</a> page describes the full path a
+  recording takes, and the <a href="faq.html">FAQ</a> answers the questions that
+  come up most often.</p>
+
+  <h2>Platform integrations</h2>
+  <table>
+    <tr><th>Platform</th><th>What StreamClipper does</th></tr>
+    <tr><td>YouTube</td><td>Uploads an approved clip as a Short, with the title and description shown to the owner beforehand.</td></tr>
+    <tr><td>TikTok</td><td>Uploads an approved clip through the Content Posting API, after a confirmation screen with the account name, privacy level and content disclosure.</td></tr>
+    <tr><td>Discord</td><td>Posts an approved clip into a channel the owner chose, through a webhook.</td></tr>
+  </table>
+  <p class="note">The integration only writes. StreamClipper does not read
+  videos, followers, comments or analytics from any platform.</p>
+</main>
+
+<footer class="bottom">
+  <div class="wrap">
+    <nav>
+      <a href="index.html">Overview</a>
+      <a href="features.html">Features</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="faq.html">FAQ</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </nav>
+    StreamClipper · <a href="mailto:l16061448@gmail.com">l16061448@gmail.com</a>
+  </div>
+</footer>
+
 </body>
 </html>
